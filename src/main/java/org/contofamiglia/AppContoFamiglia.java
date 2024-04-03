@@ -8,8 +8,6 @@ public class AppContoFamiglia {
         Thread tPadre = new Thread(new Padre(contoCondiviso), "padre");
         tPadre.start();
 
-        Figlio figlio1 = new Figlio(contoCondiviso);
-
         Thread tFiglio1 = new Thread(new Figlio(contoCondiviso), "figlio 1");
         Thread tFiglio2 = new Thread(new Figlio(contoCondiviso), "figlio 2");
 

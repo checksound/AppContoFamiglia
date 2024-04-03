@@ -26,3 +26,31 @@ tra thread. Si modelli poi il thread padre ed i thread figli come classi Java di
 Introdurre, infine, una classe con il metodo main per creare ed avviare i vari thread, e 
 testare l’applicazione.]*
 
+## Soluzioni
+
+### Caso 1
+
+Soluzione con il padre e più figli che accedono al 
+[org.contofamiglia.Conto](./src/main/java/org/contofamiglia/Conto.java) condiviso, 
+[org.contofamiglia.AppContoFamiglia](./src/main/java/org/contofamiglia/AppContoFamiglia.java).
+
+### Caso 2
+
+Soluzione con i due genitori, padre e madre, e più figli che accedono al 
+[org.contofamiglia2.Conto](./src/main/java/org/contofamiglia2/Conto.java) condiviso,
+[org.contofamiglia2.AppContoFamiglia](./src/main/java/org/contofamiglia2/AppContoFamiglia.java).
+
+Quando i figli rimangono bloccati perché non riescono a prelevare, uno e solo uno dei due genitori, 
+deve depositare sul conto.
+
+### Caso 3
+
+Differente implementazione di [org.contofamiglia3.Conto](./src/main/java/org/contofamiglia3/Conto.java)
+condiviso e applicazione [org.contofamiglia3.AppContoFamiglia](./src/main/java/org/contofamiglia3/AppContoFamiglia.java).
+
+### Caso 4
+
+Utilizzo della classi `java.util.concurrent.locks.Lock` e `java.util.concurrent.locks.Condition`
+per la sincronizzazione in modo esplicito: [org.contofamiglia4.Conto](./src/main/java/org/contofamiglia4/Conto.java) condiviso
+e applicazione [org.contofamiglia4.AppContoFamiglia](./src/main/java/org/contofamiglia4/AppContoFamiglia.java).
+
